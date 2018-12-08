@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawStuff);
+
+var data;
+var options;
+var chart = null;
+var c = 1;
+
+function drawChart() {
+    // Instantiate and draw our chart, passing in some options.
+    if (chart == null) {
+        chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    }
+    chart.draw(data, options);
+}
+
+async function drawStuff() {
+
+    const response1 = await fetch('http://tmmiot.exploring-iota.com/assets/30');
+    const myJSON2 = await response1.json();
+    
+    data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'pm2.5 * 10');
+    var i;
+    var j=29;
+    for (i = 0; i < 30; i++) {
+     //console.log("time: "+  myJSON2[j-i].time +" pm " + myJSON2[j-i].pm2p5);
+     data.addRow([myJSON2[j-i].time.toString(), myJSON2[j-i].pm2p5*10 ]);
+    }
+
+    // Set chart options
+    options = {
+        'title': 'Air quality measurement pm2.5',
+            'width': 1000,
+            'height': 600
+    };
+
+    drawChart();
+
+    setInterval(async function() {
+	const response2 = await fetch('http://tmmiot.exploring-iota.com/assets/1');
+	const myJSON = await response2.json();
+	data.removeRow(0);
+        data.addRow([myJSON[0].time.toString(), myJSON[0].pm2p5*10]);
+        drawChart();
+    }, 180000);
+};
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="chart_div" style="width: 1000px; height: 1000px;"></div>
+  </body>
+</html>
