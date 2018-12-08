@@ -1,0 +1,66 @@
+nohup: ignoring input
+
+> mindmonetize-market@0.0.0 start /home/jan_bertrand_siemens/tellMeMoreIoT
+> node ./bin/www
+
+(node:1154) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+connection succesful
+[0mGET / [36m304 [0m9.149 ms - -[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1276.619 ms - 3271[0m
+1 - false
+[0mGET /assets/1 [32m200 [0m1103.351 ms - 110[0m
+[0mGET / [36m304 [0m1.370 ms - -[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1105.096 ms - 3271[0m
+[0mGET / [36m304 [0m0.934 ms - -[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1679.596 ms - 3269[0m
+[0mGET / [36m304 [0m0.939 ms - -[0m
+30 - false
+[0mGET / [36m304 [0m0.856 ms - -[0m
+[0mGET /assets/30 [32m200 [0m3722.257 ms - 3267[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1411.610 ms - 3267[0m
+[0mGET / [36m304 [0m0.831 ms - -[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m2126.277 ms - 3267[0m
+[0mGET / [32m200 [0m1.091 ms - 1782[0m
+30 - false
+[0mGET /assets/30 [36m304 [0m1130.316 ms - -[0m
+[0mGET / [32m200 [0m1.050 ms - 1782[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1065.502 ms - 3267[0m
+[0mGET / [36m304 [0m1.814 ms - -[0m
+[0mGET / [36m304 [0m0.737 ms - -[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1018.823 ms - 3267[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m999.575 ms - 3267[0m
+1 - false
+[0mGET /assets/1 [32m200 [0m1144.933 ms - 110[0m
+1 - false
+[0mGET /assets/1 [32m200 [0m1508.107 ms - 108[0m
+[0mGET / [32m200 [0m1.245 ms - 1854[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1231.424 ms - 3265[0m
+[0mGET / [36m304 [0m2.111 ms - -[0m
+30 - false
+[0mGET /assets/30 [36m304 [0m989.990 ms - -[0m
+[0mGET / [36m304 [0m0.770 ms - -[0m
+30 - false
+[0mGET /assets/30 [36m304 [0m968.312 ms - -[0m
+[0mGET / [32m200 [0m1.028 ms - 1792[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1276.619 ms - 3265[0m
+[0mGET / [32m200 [0m0.976 ms - 1787[0m
+30 - false
+[0mGET /assets/30 [36m304 [0m1114.941 ms - -[0m
+[0mGET / [32m200 [0m1.151 ms - 1784[0m
+30 - false
+[0mGET /assets/30 [32m200 [0m1252.454 ms - 3265[0m
+[0mGET / [32m200 [0m1.419 ms - 1805[0m
+30 - false
+[0mGET /assets/30 [36m304 [0m979.170 ms - -[0m
+1 - false
+[0mGET /assets/1 [32m200 [0m950.684 ms - 110[0m

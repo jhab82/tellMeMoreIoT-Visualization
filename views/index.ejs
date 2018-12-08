@@ -24,18 +24,21 @@ async function drawStuff() {
     const myJSON2 = await response1.json();
     
     data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'pm2.5 * 10');
+    data.addColumn('datetime', 'Date');
+    data.addColumn('number', 'pm2p5');
+    data.addColumn('number', 'pm10');
     var i;
     var j=29;
     for (i = 0; i < 30; i++) {
-     //console.log("time: "+  myJSON2[j-i].time +" pm " + myJSON2[j-i].pm2p5);
-     data.addRow([myJSON2[j-i].time.toString(), myJSON2[j-i].pm2p5*10 ]);
+	var d = new Date();
+	d.setTime(parseInt(myJSON2[j-i].time));
+     console.log(d);
+     data.addRow([d, parseFloat(myJSON2[j-i].pm2p5), parseFloat(myJSON2[j-i].pm10) ]);
     }
 
     // Set chart options
     options = {
-        'title': 'Air quality measurement pm2.5',
+        'title': 'Air quality measurement',
             'width': 1000,
             'height': 600
     };
@@ -46,7 +49,9 @@ async function drawStuff() {
 	const response2 = await fetch('http://tmmiot.exploring-iota.com/assets/1');
 	const myJSON = await response2.json();
 	data.removeRow(0);
-        data.addRow([myJSON[0].time.toString(), myJSON[0].pm2p5*10]);
+	var d = new Date();
+        d.setTime(parseInt(myJSON[0].time)*1000)
+        data.addRow([d, parseFloat(myJSON[0].pm2p5), parseFloat(myJSON[0].pm10)]);
         drawChart();
     }, 180000);
 };
